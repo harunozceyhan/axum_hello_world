@@ -24,14 +24,6 @@ async fn list_auths() -> Json<Value> {
     Json(json!(users))
 }
 
-// GET /api/users
-async fn get_auth() -> Json<Value> {
-    Json(json!(User {
-        id: 1,
-        name: "Auth1".into(),
-    }))
-}
-
 pub fn routes() -> Router {
     Router::new().route("/get", get(list_auths))
 }
